@@ -1,16 +1,21 @@
 import React from 'react';
 
-const Card = ({country}) => {
+const Card = ({ country }) => {
 
     return (
-        <div>
+        
             <li className="card">
-                <img src={country.flags.svg} alt={"drapeau" + country.translations.fra.common} />
-                <div className="infos">
-                    <h2>Nom du pays</h2>
-                </div>
+                <img 
+                    src={country.flags.svg} 
+                    alt={country.translations.fra.common}  
+                />
+            <div className="infos">
+                <h2>{country.translations.fra.common}</h2>
+                <h4>{country.capital}</h4>
+                <p>{country.population.toLocaleString()}</p>
+            </div>
             </li>
-        </div>
+
     );
 };
 
